@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	script(src="virtualPage/script/board.js" type="text/javascript")
+	link(rel="stylesheet", href="virtualPage/style/board.css")
+	div.container
+		div.row
+			div.col-md-1
+			div.col-md-10#board
+				include virtualPage/board
+			div.col-md-2 add source/sink 
+		div.row#panel
+			div.col-md-1
+			include virtualPage/panel
+		div.row#selectedComponents
+		
