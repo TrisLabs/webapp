@@ -4,12 +4,14 @@ block content
 	script(src="virtualPage/script/board.js" type="text/javascript")
 	link(rel="stylesheet", href="virtualPage/style/board.css")
 	link(rel="stylesheet", href="virtualPage/style/panel.css")
-	div.container
+	div.container-fluid
 		div.row
 			div.col-md-1
-			div.col-md-10#board
+			div.col-md-1 add source/sink
+			div#board.col-md-10
 				include virtualPage/board 
 		div.row#panel
+			div.col-md-2
 			include virtualPage/panel
 		div.row#selectedComponents
 		
