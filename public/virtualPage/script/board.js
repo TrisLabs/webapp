@@ -161,6 +161,7 @@ $(function(){
     
     var panelView={
         init: function(){
+            var wireURL = 'Components/Test/W0000.json';
             $('#component_button_1').click(function(){
                 var path = $('#component_search_1').val();
                 panelController.selectComponent(path);
@@ -170,7 +171,7 @@ $(function(){
                 panelController.selectComponent(path);
             });
             $('#W0000').click(function(){
-                var path = 'Test/W0000';
+                var path = wireURL;
                 panelController.selectComponent(path);
             });
         },
@@ -201,7 +202,7 @@ $(function(){
         parser: function(id){
             //parse the respective json to object(activeComponent)
             
-            $.getJSON("Components/"+id,function(data){
+            $.getJSON("/"+id,function(data){
                 activeComponent=data;
                 loosePoints=activeComponent.pins;
                 panelView.renderComponentInfo();

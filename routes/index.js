@@ -4,7 +4,7 @@
  */
 
 var circuitSchema = require('../schemas/circuit');
-
+var dir = require('node-dir');
 module.exports = function () {
 	var order =require('../circuit');
 	var functions = {};
@@ -13,7 +13,12 @@ module.exports = function () {
 		if (isLoggedIn(req)) {
 			res.redirect('/login');
 		} else {
-			res.render('virtualPage', {title: 'virtualPage'});
+			getAvailableComponentList('./public/Components',function(list){
+					res.render('virtualPage', {
+						title: 'virtualPage',
+						availableComponentList: list
+						});
+			});
 		}
 	};
 
@@ -66,5 +71,20 @@ module.exports = function () {
 		return "TRIS"+date.join("") + time.join("");
 	};
 
+	function getAvailableComponentList(dirname, callback){
+		dir.paths(dirname, function(err, paths) {
+		    if (err) throw err;
+		    var fileNames = {};
+		    for (var i = 0 ; i < paths.files.length ; i++ ){
+		    	paths.files[i]=paths.files[i].substring((paths.files[i].indexOf('/')+1));
+		    	var breakPath = paths.files[i].split('/');
+		    	var fileName = breakPath[breakPath.length-1].split('.')[0];
+		    	fileNames[paths.files[i]]=fileName;
+		    }
+		    //console.log('files:\n',paths.files);
+		    //console.log('subdirs:\n', paths.dirs);
+		    callback(fileNames);
+		});
+	}
 	return functions;
 };
