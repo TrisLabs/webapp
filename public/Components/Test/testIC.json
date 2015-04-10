@@ -1,0 +1,7 @@
+{"ComponentID":"W0000",
+ "name":"Wire",
+ "pins":"2",
+ "in":["0"],
+ "out":["1"],
+ "pinFunctions":["function(voltage){return voltage}","function(){return parseFloat(inputs[0])+12;}","function(){console.log('test');}"]
+}

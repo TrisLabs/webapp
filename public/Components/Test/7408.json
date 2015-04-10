@@ -1,0 +1,6 @@
+{"ComponentID":"AND",
+		"name":"AND",
+		"pins":"6",
+		"block":true,
+		"pinFunctions":["function(input){return function(){return parseFloat(nodes[input[0][0]][input[0][1]].nodeCurrent)};}","function(input){return function(){return parseFloat(nodes[input[1][0]][input[1][1]].nodeCurrent)};}","function(input){return function(){return parseFloat(nodes[input[2][0]][input[2][1]].nodeCurrent)};}","function(input){return function(){return parseFloat(nodes[input[0][0]][input[0][1]].nodeCurrent)+parseFloat(nodes[input[1][0]][input[1][1]].nodeCurrent)+parseFloat(nodes[input[2][0]][input[2][1]].nodeCurrent);};}"]
+	}	

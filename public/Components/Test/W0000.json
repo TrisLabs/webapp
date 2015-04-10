@@ -1,0 +1,8 @@
+{"ComponentID":"W0000",
+		"name":"Wire",
+		"pins":"2",
+		"in":["0"],
+		"out":["1"],
+		"block":false,
+		"pinFunctions":["function(input){return function(){return parseFloat(nodes[input[0][0]][input[0][1]].nodeCurrent?nodes[input[0][0]][input[0][1]].nodeCurrent:nodes[input[1][0]][input[1][1]].nodeCurrent)};}","function(input){return function(){return parseFloat(parseFloat(nodes[input[0][0]][input[0][1]].nodeCurrent?nodes[input[0][0]][input[0][1]].nodeCurrent:nodes[input[1][0]][input[1][1]].nodeCurrent));};}"]
+}	
